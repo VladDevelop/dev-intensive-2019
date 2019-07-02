@@ -7,6 +7,7 @@ import ru.skillbranch.devintensive.extensions.TimeUnits
 import ru.skillbranch.devintensive.extensions.add
 import ru.skillbranch.devintensive.extensions.toUserView
 import ru.skillbranch.devintensive.models.*
+import ru.skillbranch.devintensive.utils.Utils
 import java.util.*
 
 /**
@@ -61,6 +62,16 @@ class ExampleUnitTest {
         val imgMessage = BaseMessage.makeMessage(user, Chat("0"), payload = "any image url", type = "image")
         println(txtMessage.formatMessage())
         println(imgMessage.formatMessage())
+    }
+
+    @Test
+    fun test_initials(){
+        println(Utils.toInitials("Aaa","Bbb"))
+        println(Utils.toInitials("aaa",null))
+        println(Utils.toInitials(null,"bbb"))
+        println(Utils.toInitials(null,null))
+        println(Utils.toInitials("",""))
+        println(Utils.toInitials(" ",""))
     }
 
 }

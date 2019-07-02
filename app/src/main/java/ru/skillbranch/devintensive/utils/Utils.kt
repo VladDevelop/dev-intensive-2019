@@ -15,6 +15,13 @@ object Utils {
     }
 
     fun toInitials(firstName: String?, lastName: String?): String? {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        firstName?.trim()
+        lastName?.trim()
+        return when {
+            firstName.isNullOrEmpty() && lastName.isNullOrEmpty() -> null
+            !firstName.isNullOrEmpty() && lastName.isNullOrEmpty() -> firstName.substring(0,1).toUpperCase()
+            firstName.isNullOrEmpty() && !lastName.isNullOrEmpty() -> lastName.substring(0,1).toUpperCase()
+            else -> firstName?.substring(0,1)?.toUpperCase() + lastName?.substring(0,1)?.toUpperCase()
+        }
     }
 }
