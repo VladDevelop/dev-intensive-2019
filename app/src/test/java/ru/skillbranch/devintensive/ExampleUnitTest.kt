@@ -46,6 +46,19 @@ class ExampleUnitTest {
     }
 
     @Test
+    fun test_parse_full_name() {
+        println(Utils.parseFullName(null)) //null null
+        println(Utils.parseFullName("")) //null null
+        println(Utils.parseFullName(" ") ) //null null
+        println(Utils.parseFullName("John")) //John null
+
+//        val user = User.makeUser("John Cena")
+//        val user2 = User.makeUser("John Wick")
+//        val user3 = User.makeUser("John Wick")
+    }
+    
+
+    @Test
     fun test_dataq_maping() {
         val user = User.makeUser("Урамов Владислав")
         val newUser = user.copy(lastVisit = Date().add(-4, TimeUnits.DAY))
