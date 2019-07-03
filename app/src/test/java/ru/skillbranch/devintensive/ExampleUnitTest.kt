@@ -87,4 +87,23 @@ class ExampleUnitTest {
         println(Utils.toInitials(" ",""))
     }
 
+    @Test
+    fun test_user_builder(){
+        val user = User.Builder().id("1")
+                .firstName("Vlad")
+                .lastName("Uramov")
+                .avatar("image")
+                .rating(100500)
+                .respect(100500)
+                .lastVisit(Date())
+                .isOnline(true)
+                .build()
+        println(user)
+//        println(Utils.toInitials("aaa",null))
+//        println(Utils.toInitials(null,"bbb"))
+//        println(Utils.toInitials(null,null))
+//        println(Utils.toInitials("",""))
+//        println(Utils.toInitials(" ",""))
+    }
+
 }
