@@ -19,9 +19,9 @@ object Utils {
         firstName?.trim()
         lastName?.trim()
         return when {
-            firstName.isNullOrEmpty() && lastName.isNullOrEmpty() -> null
-            !firstName.isNullOrEmpty() && lastName.isNullOrEmpty() -> firstName.substring(0,1).toUpperCase()
-            firstName.isNullOrEmpty() && !lastName.isNullOrEmpty() -> lastName.substring(0,1).toUpperCase()
+            firstName?.trim().isNullOrEmpty() && lastName?.trim().isNullOrEmpty() -> null
+            !firstName?.trim().isNullOrEmpty() && lastName?.trim().isNullOrEmpty() -> firstName?.substring(0,1)?.toUpperCase() + null
+            firstName?.trim().isNullOrEmpty() && !lastName?.trim().isNullOrEmpty() -> null + lastName?.substring(0,1)?.toUpperCase()
             else -> firstName?.substring(0,1)?.toUpperCase() + lastName?.substring(0,1)?.toUpperCase()
         }
     }
