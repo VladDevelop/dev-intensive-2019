@@ -88,6 +88,12 @@ class ExampleUnitTest {
     }
 
     @Test
+    fun test_transliteration(){
+        println(Utils.transliteration("Женя Стереотипов"))
+        println(Utils.transliteration("Amazing Петр","_"))
+    }
+
+    @Test
     fun test_user_builder(){
         val user = User.Builder().id("1")
                 .firstName("Vlad")
