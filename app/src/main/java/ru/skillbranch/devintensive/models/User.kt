@@ -60,33 +60,4 @@ data class User(
         fun build() = id?.let { rating?.let { it1 -> respect?.let { it2 -> User(it, firstName, lastName, avatar, it1, it2, lastVisit, isOnline) } } }
     }
 
-//    object Builder {
-//        var id: String
-//        var firstName: String? = null
-//            private set
-//        var lastName: String? = null
-//            private set
-//        var avatar: String? = null
-//        var rating: Int
-//        var respect: Int
-//        var lastVisit: Date? = null
-//            private set
-//        var isOnline: Boolean = false
-//            private set
-//
-//        fun id(id: String) : Builder = apply { this.id = id}
-//        fun firstName(firstName: String) = apply { this.firstName = firstName }
-//        fun lastName(lastName: String) = apply { this.lastName = lastName }
-//        fun avatar(avatar: String) = apply { this.avatar = avatar }
-//        fun rating(rating: Int) = apply { this.rating = rating }
-//        fun respect(respect: Int) = apply { this.respect = respect }
-//        fun lastVisit(lastVisit: Date) = apply { this.lastVisit = lastVisit }
-//        fun isOnline(isOnline: Boolean) = apply { this.isOnline = isOnline }
-//
-//        fun build(): User {
-//            return User(id, firstName, lastName, avatar, rating, respect, lastVisit, isOnline)
-//        }
-//    }
-
-
 }

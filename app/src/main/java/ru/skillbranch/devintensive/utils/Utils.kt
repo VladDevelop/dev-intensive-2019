@@ -1,6 +1,9 @@
 package ru.skillbranch.devintensive.utils
 
-import java.lang.StringBuilder
+import android.content.Context
+import ru.skillbranch.devintensive.R
+import ru.skillbranch.devintensive.extensions.TimeUnits
+
 
 object Utils {
 
@@ -74,6 +77,44 @@ object Utils {
                 1
             )?.toUpperCase()
             else -> firstName?.substring(0, 1)?.toUpperCase() + lastName?.substring(0, 1)?.toUpperCase()
+        }
+    }
+
+//    fun plurals(i: Long, timeunit: TimeUnits, context: Context): String {
+//        val j: Int = i.toInt()%100
+//        return when (timeunit) {
+//            TimeUnits.SECOND -> context.resources.getQuantityString(R.plurals.seconds_plur, j, j)
+//            TimeUnits.MINUTE -> context.resources.getQuantityString(R.plurals.minutes_plur, j, j)
+//            TimeUnits.HOUR -> context.resources.getQuantityString(R.plurals.hours_plur, j, j)
+//            TimeUnits.DAY -> context.resources.getQuantityString(R.plurals.days_plur, j, j)
+//        }
+//    }
+
+    fun plurals(i: Long, timeunit: TimeUnits): String {
+
+        val j = i % 10
+
+        return if(j in 1..1) {
+            when(timeunit) {
+                TimeUnits.SECOND ->  "$i секунду"
+                TimeUnits.MINUTE ->  "$i минуту"
+                TimeUnits.HOUR ->  "$i час"
+                TimeUnits.DAY ->  "$i день"
+            }
+        } else if(j in 2..4) {
+            when(timeunit) {
+                TimeUnits.SECOND ->  "$i секунды"
+                TimeUnits.MINUTE ->  "$i минуты"
+                TimeUnits.HOUR ->  "$i часа"
+                TimeUnits.DAY ->  "$i дня"
+            }
+        } else {
+            when(timeunit) {
+                TimeUnits.SECOND ->  "$i секунд"
+                TimeUnits.MINUTE ->  "$i минут"
+                TimeUnits.HOUR ->  "$i часов"
+                TimeUnits.DAY ->  "$i дней"
+            }
         }
     }
 }
