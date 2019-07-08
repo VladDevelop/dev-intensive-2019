@@ -3,9 +3,7 @@ package ru.skillbranch.devintensive
 import org.junit.Test
 
 import org.junit.Assert.*
-import ru.skillbranch.devintensive.extensions.TimeUnits
-import ru.skillbranch.devintensive.extensions.add
-import ru.skillbranch.devintensive.extensions.toUserView
+import ru.skillbranch.devintensive.extensions.*
 import ru.skillbranch.devintensive.models.*
 import ru.skillbranch.devintensive.utils.Utils
 import java.util.*
@@ -105,6 +103,29 @@ class ExampleUnitTest {
                 .isOnline(true)
                 .build()
         println(user)
+//        println(Utils.toInitials("aaa",null))
+//        println(Utils.toInitials(null,"bbb"))
+//        println(Utils.toInitials(null,null))
+//        println(Utils.toInitials("",""))
+//        println(Utils.toInitials(" ",""))
+    }
+
+    @Test
+    fun test_truncate(){
+        println("Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес»".truncate())
+        println("Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес»".truncate(15))
+        println("A     ".truncate(3))
+//        println(Utils.toInitials("aaa",null))
+//        println(Utils.toInitials(null,"bbb"))
+//        println(Utils.toInitials(null,null))
+//        println(Utils.toInitials("",""))
+//        println(Utils.toInitials(" ",""))
+    }
+
+    @Test
+    fun test_trim(){
+        println("<p class=\"title\">Образовательное IT-сообщество Skill Branch</p>".stripHtml())
+        println("<p>Образовательное       IT-сообщество Skill Branch</p>".stripHtml())
 //        println(Utils.toInitials("aaa",null))
 //        println(Utils.toInitials(null,"bbb"))
 //        println(Utils.toInitials(null,null))
