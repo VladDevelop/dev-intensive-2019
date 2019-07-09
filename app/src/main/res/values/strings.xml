@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dev-intensive</string>
+    <string name="app_name">Chat Dev-intensive</string>
 
     <plurals name="seconds_plur">
         <item quantity="one">%d секунду</item>
