@@ -26,8 +26,6 @@ class ExampleUnitTest {
 
     @Test
     fun test_factory() {
-//        val user = User.makeUser("John Cena")
-//        val user2 = User.makeUser("John Wick")
         val user3 = User.makeUser("John Wick")
     }
 
@@ -37,10 +35,6 @@ class ExampleUnitTest {
         val user2 = user.copy(lastVisit = Date())
         val user3 = user.copy(lastVisit = Date().add(-2, TimeUnits.SECOND))
         val user4 = user.copy(lastName = "Cena", lastVisit = Date().add(2, TimeUnits.HOUR))
-
-//        val user = User.makeUser("John Cena")
-//        val user2 = User.makeUser("John Wick")
-//        val user3 = User.makeUser("John Wick")
     }
 
     @Test
@@ -49,10 +43,6 @@ class ExampleUnitTest {
         println(Utils.parseFullName("")) //null null
         println(Utils.parseFullName(" ") ) //null null
         println(Utils.parseFullName("John")) //John null
-
-//        val user = User.makeUser("John Cena")
-//        val user2 = User.makeUser("John Wick")
-//        val user3 = User.makeUser("John Wick")
     }
     
 
@@ -93,7 +83,8 @@ class ExampleUnitTest {
 
     @Test
     fun test_user_builder(){
-        val user = User.Builder().id("1")
+        val user = User.Builder()
+                .id("1")
                 .firstName("Vlad")
                 .lastName("Uramov")
                 .avatar("image")
@@ -103,11 +94,6 @@ class ExampleUnitTest {
                 .isOnline(true)
                 .build()
         println(user)
-//        println(Utils.toInitials("aaa",null))
-//        println(Utils.toInitials(null,"bbb"))
-//        println(Utils.toInitials(null,null))
-//        println(Utils.toInitials("",""))
-//        println(Utils.toInitials(" ",""))
     }
 
     @Test
@@ -115,22 +101,12 @@ class ExampleUnitTest {
         println("Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес»".truncate())
         println("Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес»".truncate(15))
         println("A     ".truncate(3))
-//        println(Utils.toInitials("aaa",null))
-//        println(Utils.toInitials(null,"bbb"))
-//        println(Utils.toInitials(null,null))
-//        println(Utils.toInitials("",""))
-//        println(Utils.toInitials(" ",""))
     }
 
     @Test
     fun test_trim(){
         println("<p class=\"title\">Образовательное IT-сообщество Skill Branch</p>".stripHtml())
         println("<p>Образовательное       IT-сообщество Skill Branch</p>".stripHtml())
-//        println(Utils.toInitials("aaa",null))
-//        println(Utils.toInitials(null,"bbb"))
-//        println(Utils.toInitials(null,null))
-//        println(Utils.toInitials("",""))
-//        println(Utils.toInitials(" ",""))
     }
 
 }
