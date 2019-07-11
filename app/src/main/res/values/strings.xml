@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Chat Dev-intensive</string>
+
+    <plurals name="seconds_plur">
+        <item quantity="one">%d секунду</item>
+        <item quantity="two">%d секунды</item>
+        <item quantity="few">%d секунды</item>
+        <item quantity="many">%d секунд</item>
+    </plurals>
+
+    <plurals name="minutes_plur">
+        <item quantity="one">%d минуту</item>
+        <item quantity="two">%d минуты</item>
+        <item quantity="few">%d минуты</item>
+        <item quantity="many">%d минут</item>
+    </plurals>
+
+    <plurals name="hours_plur">
+        <item quantity="one">%d час</item>
+        <item quantity="two">%d часа</item>
+        <item quantity="few">%d часа</item>
+        <item quantity="many">%d часов</item>
+    </plurals>
+
+    <plurals name="days_plur">
+        <item quantity="one">%d день</item>
+        <item quantity="two">%d дня</item>
+        <item quantity="few">%d дня</item>
+        <item quantity="many">%d дней</item>
+    </plurals>
+
+</resources>
