@@ -67,12 +67,12 @@ class ExampleUnitTest {
 
     @Test
     fun test_initials(){
-        println(Utils.toInitials("Aaa","Bbb"))
-        println(Utils.toInitials("aaa",null))
-        println(Utils.toInitials(null,"bbb"))
-        println(Utils.toInitials(null,null))
-        println(Utils.toInitials("",""))
-        println(Utils.toInitials(" ",""))
+        println(Utils.toInitials("Aaa", "Bbb"))
+        println(Utils.toInitials("aaa", null))
+        println(Utils.toInitials(null, "bbb"))
+        println(Utils.toInitials(null, null))
+        println(Utils.toInitials("", ""))
+        println(Utils.toInitials(" ", ""))
     }
 
     @Test
