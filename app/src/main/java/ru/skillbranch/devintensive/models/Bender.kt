@@ -20,7 +20,7 @@ class Bender(var status:Status = Status.NORMAL, var question: Question = Questio
             "Отлично - ты справился\n${question.question}" to status.color
         } else {
             countIncorrectAnswer++
-            if (countIncorrectAnswer < 4) {
+            if (countIncorrectAnswer < 3) {
                 status = status.nextStatus()
                 "Это неправильный ответ\n${question.question}" to status.color
             } else {
