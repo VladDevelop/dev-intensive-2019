@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         Log.d("M_MainActivity", "onCreate")
         val (r, g, b) = benderObj.status.color
-        benderImage.setColorFilter(Color.rgb(r,g,b), PorterDuff.Mode.MULTIPLY)
+        benderImage.setColorFilter(Color.rgb(r, g, b), PorterDuff.Mode.MULTIPLY)
 
         textTxt.text = benderObj.askQuestion()
         sendBtn.setOnClickListener(this)
@@ -72,15 +72,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun handleOnClickSend() {
-        val (phrase, color) =  benderObj.listenAnswer(messageEt.text.toString().toLowerCase())
-        messageEt.setText("")
-        val (r, g, b) = color
-        benderImage.setColorFilter(Color.rgb(r,g,b), PorterDuff.Mode.MULTIPLY)
-        textTxt.text = phrase
+        val validation = benderObj.validationCheck(messageEt.text.toString())
+        if (benderObj.validationCheck(messageEt.text.toString()) == Bender.Validation.OK) {
+            val (phrase, color) = benderObj.listenAnswer(messageEt.text.toString().toLowerCase())
+            messageEt.setText("")
+            val (r, g, b) = color
+            benderImage.setColorFilter(Color.rgb(r, g, b), PorterDuff.Mode.MULTIPLY)
+            textTxt.text = phrase
+        } else {
+            textTxt.text = "${validation.msg}\n${benderObj.askQuestion()}"
+        }
+//        val (phrase, color) = benderObj.listenAnswer(messageEt.text.toString().toLowerCase())
+//        messageEt.setText("")
+//        val (r, g, b) = color
+//        benderImage.setColorFilter(Color.rgb(r, g, b), PorterDuff.Mode.MULTIPLY)
+//        textTxt.text = phrase
     }
 
     override fun onClick(v: View?) {
-        if(v?.id == R.id.iv_send) {
+        if (v?.id == R.id.iv_send) {
             handleOnClickSend()
         }
     }
